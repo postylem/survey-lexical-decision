@@ -89,9 +89,9 @@ format:
 
 :::
 
-# Major Lexical Decision Datasets {#sec-datasets}
+# Lexical decision datasets {#sec-datasets}
 
-These datasets serve as the primary benchmarks against which all models are evaluated.
+Datasets serve as the primary benchmarks against which all models are evaluated.
 
 1. **English Lexicon Project (ELP).** @balota2007elp
 
@@ -183,7 +183,7 @@ These datasets serve as the primary benchmarks against which all models are eval
     - **Key findings:** First large-scale auditory LD database. Word frequency and phonological neighborhood density are major predictors. Used as a benchmark for TRACE, TISK, DIANA, and DLM models.
 
 
-# Classic Corpus-Derived Frequency and Orthographic Predictors {#sec-classic}
+# Classic corpus-derived frequency and orthographic predictors {#sec-classic}
 
 1. **SUBTLEX-US Frequency Norms.** @brysbaert2009subtlexus
 
@@ -294,7 +294,7 @@ These datasets serve as the primary benchmarks against which all models are eval
     - **Key findings:** Comprehensive review. Frequency explains 30--40% of LD variance. Introduced the Zipf scale. Semantic diversity and word prevalence add variance beyond frequency. Individual differences in language exposure modulate frequency effects.
 
 
-# Distributional Semantics and Word Embeddings Predicting LD {#sec-distributional}
+# Distributional semantics and word embeddings predicting LD {#sec-distributional}
 
 1. **Word2Vec vs. Count Models.** @mandera2017explaining
 
@@ -368,7 +368,7 @@ These datasets serve as the primary benchmarks against which all models are eval
     - **Key findings:** All three semantic richness measures independently predict LD RT: words that are semantically richer (more features, more senses, more dispersed across contexts) are recognized faster. The effects are additive, meaning that richness is a multidimensional construct. This paper anchors a broader cluster of work on body-object interaction (BOI), sensory experience ratings (SER), imageability, and number of associates as LD predictors---all of which represent a distinct predictor class ("semantic richness") beyond the frequency/form variables that dominate the megastudy literature. Relevant to the Gym because any model claiming to predict LD must account for the fact that meaning-level variables have independent effects even in isolated word recognition.
 
 
-# Discriminative Learning Models {#sec-discriminative}
+# Discriminative learning models {#sec-discriminative}
 
 1. **Naive Discriminative Learning (NDL).** @baayen2011ndl
 
@@ -413,7 +413,7 @@ These datasets serve as the primary benchmarks against which all models are eval
     - **Key findings:** Frequency effects in LD emerge naturally from discrimination learning without explicit storage of frequency counts.
 
 
-# Morphological Processing with Distributional Models {#sec-morphology}
+# Morphological processing with distributional models {#sec-morphology}
 
 1. **FRACSS Model.** @marelli2015fracss
 
@@ -444,11 +444,11 @@ These datasets serve as the primary benchmarks against which all models are eval
     - **LM output:** Multi-dimensional distributional semantic transparency measures (compositional + relatedness).
 
 
-# Computational and Process Models of Word Recognition {#sec-processmodels}
+# Computational and process models of word recognition {#sec-processmodels}
 
 This section covers models that provide mechanistic accounts of how the lexical decision is made---not just which variables predict RT, but *how* perceptual evidence is accumulated and a word/nonword decision is reached. These process models are critical to the Gym because they specify the *linking function* between LM-derived quantities and RT distributions.
 
-## Foundational Computational Models {#sec-computational}
+## Foundational computational models {#sec-computational}
 
 1. **The PDP/Triangle Model.** @seidenberg1989pdp
 
@@ -482,7 +482,7 @@ This section covers models that provide mechanistic accounts of how the lexical 
     - **LM output:** Three read-out criteria: (1) local activity criterion—single unit exceeds threshold → "yes"; (2) temporal deadline—no unit exceeds threshold in time → "no"; (3) global activity criterion—summed activation exceeds threshold → fast "yes" based on familiarity.
     - **Key findings:** The MROM is the computational model most explicitly designed for the lexical decision task. The dual-criterion mechanism (Σ activation for "yes" + temporal deadline for "no") explains how neighborhood density can simultaneously facilitate word responses (more global activation) and slow nonword rejection (more confusable). Provides the theoretical framework for understanding why frequency effects are inflated in LD compared to naming [@balota1984frequency].
 
-## Evidence Accumulation and Decision Models {#sec-accumulation}
+## Evidence accumulation and decision models {#sec-accumulation}
 
 1. **The Drift-Diffusion Model.** @ratcliff1978ddm
 
@@ -540,7 +540,7 @@ This section covers models that provide mechanistic accounts of how the lexical 
     - **Key findings:** Higher vocabulary knowledge → faster word recognition, attenuated sensitivity to lexical variables (smaller frequency effects), steeper drift rates. Individual differences modulate all model predictions.
 
 
-# Information-Theoretic and Modern Neural Approaches {#sec-neural}
+# Information-theoretic and modern neural approaches {#sec-neural}
 
 A large literature links surprisal to processing cost during sentence reading (self-paced reading, eye-tracking). That literature---including foundational work by Smith & Levy (2013) on the logarithmic surprisal effect, cross-linguistic validation by Wilcox et al. (2023), large-scale evidence by Shain et al. (2024), and the inverse scaling phenomenon documented by Oh & Schuler (2023)---is covered in a separate survey on reading time prediction. Here we include only the work that applies information-theoretic measures specifically to lexical decision paradigms.
 
@@ -601,7 +601,7 @@ A large literature links surprisal to processing cost during sentence reading (s
     - **LMs tested:** GloVe (6B, 42B, 840B), Word2Vec (Google News, custom BNC, Wikipedia, OpenSubtitles).
     - **Key findings:** GloVe embeddings produce significantly higher correlations with primed LD RTs than Word2Vec. Algorithm choice matters more than corpus choice.
 
-# Semantic Priming and Neural Correlates {#sec-priming}
+# Semantic priming and neural correlates {#sec-priming}
 
 1. **Semantic Priming Project (SPP).** @hutchison2013spp
 
@@ -629,13 +629,13 @@ A large literature links surprisal to processing cost during sentence reading (s
     - **Key findings:** GPT-3 surprisal is the best predictor of N400 amplitude, outperforming cosine similarity. Supports strong prediction account of N400.
 
 
-# Synthesis and Reviews {#sec-synthesis}
+# Synthesis and reviews {#sec-synthesis}
 
 Key reviews: @keuleers2015megastudies provides an overview of the megastudy approach and how ELP/BLP/DLP/FLP have been used to test computational models and identify new psycholinguistic variables. @guenther2019review is a major review of distributional semantic models (LSA, HAL, BEAGLE, GloVe, word2vec) from a psychological perspective, discussing their validation through predicting LD times and priming effects.
 
 The literature reveals a clear hierarchy of predictive power and several critical methodological insights.
 
-## Variance Explained by Predictor Type
+## Variance explained by predictor type
 
 Approximate values from ELP LD data:
 
@@ -654,7 +654,7 @@ Approximate values from ELP LD data:
 
 The best single model reported in the literature for predicting ELP LD RT is @mandera2017explaining's CBOW word2vec model combined with standard lexical covariates, at 45.5% variance explained. Frequency alone accounts for 30--40%, and the remaining 5--15% comes from orthographic, semantic, and other variables.
 
-## Process Models and the Decision Stage
+## Process models and the decision stage
 
 A critical dimension often overlooked in predictor-oriented surveys is the *decision mechanism* by which perceptual evidence is converted into a word/nonword response. The survey covers several families of process models:
 
@@ -664,7 +664,7 @@ A critical dimension often overlooked in predictor-oriented surveys is the *deci
 
 These models matter for the Gym because they specify different linking functions between any predictor (frequency, SND, etc.) and the observed RT. A user submitting a "model" to the Gym might submit not just a set of predictor values but a process model that maps those values through a specific decision architecture.
 
-## Critical Methodological Observations
+## Critical methodological observations
 
 Three critical methodological observations emerge from this literature.
 
@@ -674,39 +674,39 @@ Second, **internal noise in LD is substantial**---@diependaele2012noise showed o
 
 Third, **the choice of corpus matters enormously**: subtitle-based frequencies outperform written-text frequencies across every language tested, and social media frequencies may outperform even subtitles [@herdagdelen2017social].
 
-## The Emerging LLM Paradigm
+## The emerging LLM paradigm
 
 The emerging LLM paradigm represents a fundamental shift. Rather than extracting specific features (frequency, SND, surprisal) from models, recent work by @brysbaert2025gptfam, @brysbaert2025simulating, and @trott2024augment demonstrates that LLMs can directly generate psycholinguistic norms and even LD RTs themselves. Fine-tuned GPT-4o mini generates RTs that are highly correlated with observed values, and GPT-4-generated familiarity ratings outperform decades-old frequency norms. This suggests that modern LLMs have internalized the distributional regularities that drive word recognition, not as explicit frequency counts but as implicit knowledge captured during pretraining. Whether this constitutes a genuine model of word recognition or merely reflects sophisticated pattern matching on training data that includes psycholinguistic research remains an open and important question.
 
-## The Lexical Decision--Reading Time Distinction
+## The lexical decision--reading time distinction
 
 The lexical decision--reading time distinction is crucial for interpreting this literature. A large body of NLP-venue work on surprisal and transformer models uses reading times in sentence context, where contextual surprisal is the linking variable; that work is covered in a companion survey on reading time prediction. Isolated-word LD involves different processes: without a sentence context, unigram surprisal (≈ log frequency) and word-form properties dominate, and contextual surprisal is undefined. The few papers bridging this gap---@beinborn2023tokenization on tokenization, @mandera2017explaining on embeddings, @brysbaert2025gptfam and @brysbaert2025simulating on LLM-generated measures---represent the most direct intersection of modern NLP and LD megastudy research.
 
-# Taxonomy of Model Types by Input and Output {#sec-taxonomy}
+# Taxonomy of model types by input and output {#sec-taxonomy}
 
 This section organizes all predictor-generating models encountered in the survey by what they take as input and what they produce as output. The goal is to enumerate the distinct *interface types* that the Psycholinguistics Gym would need to support. Each type defines a contract: "given input of kind X, produce output of kind Y." A user submitting a model to the Gym would implement one or more of these interfaces, and the Gym would evaluate the resulting predictions against human data.
 
 We distinguish twelve types, grouped into four broad families.
 
-## Family A: Word-intrinsic and lexicon-derived features {#sec-familyA}
+## Family A: word-intrinsic and lexicon-derived features {#sec-familyA}
 
 These are the simplest class of predictors: deterministic properties that can be computed from the word string alone, or from the word string plus a reference lexicon or corpus, with no learned parameters. A researcher can compute these in a few lines of code given only the stimulus list and standard resources. They require no "model" in the machine learning sense---no training, no optimization, no learned weights. Despite their simplicity, these features collectively account for the largest share of explainable variance in LD RT (~35--45%), and they serve as the mandatory baseline that any more sophisticated model must improve upon. Every paper in this survey controls for at least word frequency (Type 2) and word length (Type 0) before testing a new predictor.
 
-### Type 0: Intrinsic word properties {#sec-type0}
+### Type 0: intrinsic word properties {#sec-type0}
 
 - **Input:** A word string (or character sequence).
 - **Output:** Deterministic properties of the orthographic/phonological form: letter count, syllable count, morpheme count, stroke count (Chinese), number of characters.
 - **Papers:** Used as covariates in virtually every study. @new2006wordlength showed the U-shaped length effect in ELP.
 - **Gym interface:** `word_string → {length, n_syllables, n_morphemes, ...}`. No model to submit; the Gym computes these as baselines and standard covariates.
 
-### Type 1: Orthographic and phonological neighborhood statistics {#sec-type1}
+### Type 1: orthographic and phonological neighborhood statistics {#sec-type1}
 
 - **Input:** A word string + a reference lexicon (list of all known words in the language).
 - **Output:** Coltheart's N (substitution neighbors), OLD20 (mean Levenshtein distance to 20 closest neighbors), phonological neighborhood density (PND), bigram/trigram frequency, phonotactic probability.
 - **Papers:** @coltheart1977access introduced N; @yarkoni2008old20 introduced OLD20 as a superior replacement; @tucker2019mald used phonological ND for auditory LD.
 - **Gym interface:** `word_string × lexicon → {N, OLD20, PND, ...}`. The Gym could provide a standard lexicon per language; users could also submit custom neighborhood metrics computed from their own lexicons.
 
-### Type 2: Corpus-derived frequency and diversity statistics {#sec-type2}
+### Type 2: corpus-derived frequency and diversity statistics {#sec-type2}
 
 - **Input:** A word string + a large text corpus (or its pre-computed frequency tables).
 - **Output:** A scalar per word: raw frequency, log frequency, contextual diversity (proportion of documents containing the word), rank frequency.
@@ -719,7 +719,7 @@ These are the simplest class of predictors: deterministic properties that can be
 - **Papers:** @brysbaert2018review provides the comprehensive review; @adelman2006cd showed CD subsumes frequency.
 - **Gym interface:** `word_string × corpus → {log_freq, CD, rank, ...}`. Users could submit predictions from any corpus. The Gym would provide standard frequency norms (SUBTLEX-US, etc.) as baselines. The key design question: does the Gym accept pre-computed frequency tables, or does it require the user to specify a corpus and extraction method?
 
-## Family B: Human-normed and LLM-generated psycholinguistic variables {#sec-familyB}
+## Family B: human-normed and LLM-generated psycholinguistic variables {#sec-familyB}
 
 These are per-word scalar ratings that capture psychological or experiential properties of words---properties that cannot be computed from the word string or a corpus alone, but instead reflect how humans *experience* or *know* those words. Traditionally, these are collected by asking human participants to rate words on scales (e.g., "How old were you when you learned this word?" for AoA, or "How concrete is this word?" for concreteness). Because human norming is expensive and slow, these ratings typically exist for only a few thousand to a few tens of thousands of words, and they are provided as fixed lookup tables rather than as generative models.
 
@@ -727,14 +727,14 @@ A recent development is the use of large language models (LLMs) to *simulate* hu
 
 For the Gym, Family B predictors are distinguished from Family A by the fact that their values cannot be recomputed from the stimulus list alone---they must be *supplied* by the user (or by the Gym's norm database) as fixed tables.
 
-### Type 3: Human-collected psycholinguistic norms {#sec-type3}
+### Type 3: human-collected psycholinguistic norms {#sec-type3}
 
 - **Input:** A word string → human raters (or a lookup table of previously collected norms).
 - **Output:** A scalar rating per word: age of acquisition (AoA), concreteness, imageability, valence, arousal, familiarity, body-object interaction (BOI), sensory experience ratings (SER), number of features (NoF), number of senses (NOS).
 - **Papers:** @kuperman2012aoa (AoA); @kuperman2014emotion (valence/arousal); @pexman2008richness (NoF, NOS, CD as semantic richness).
 - **Gym interface:** `word_string → {aoa, concreteness, valence, ...}`. Users submit a vector of norm values per word. The Gym provides standard norm sets as baselines.
 
-### Type 4: Word prevalence {#sec-type4}
+### Type 4: word prevalence {#sec-type4}
 
 - **Input:** A word string → large-scale vocabulary test (or its results).
 - **Output:** Proportion of the population that knows the word.
@@ -751,7 +751,7 @@ For the Gym, Family B predictors are distinguished from Family A by the fact tha
     - *Norm generation:* `word_string × prompt → norm_rating`. Same output format as Type 3, but the source is an LLM rather than human raters.
     - *Direct RT prediction:* `word_string → predicted_RT`. The LLM directly outputs a predicted reaction time. This is a fundamentally different interface because it bypasses the predictor → linking function → RT pipeline entirely---the LLM *is* the full model.
 
-## Family C: Trained representation models {#sec-familyC}
+## Family C: trained representation models {#sec-familyC}
 
 These are models in the machine learning sense: they have internal parameters (weights, embeddings, vocabulary tables) that have been *learned* from a corpus of text or from form-meaning mappings. Given a word string as input, they produce a structured representation---a dense vector, a probability distribution, an activation pattern, or a set of derived scalar features---that encodes what the model has learned about that word from its training data. Unlike Family A's deterministic computations or Family B's fixed lookup tables, these models transform the input through learned parameters, and different training corpora, architectures, or hyperparameters will produce different representations for the same word.
 
@@ -759,7 +759,7 @@ The key distinction from Family D (below) is that Family C models produce *repre
 
 This family spans a wide range of complexity, from simple embedding lookups (Type 6) to full autoregressive language models (Type 11). They are ordered roughly by the richness of the input they require and the complexity of their internal computation.
 
-### Type 6: Static word embedding models {#sec-type6}
+### Type 6: static word embedding models {#sec-type6}
 
 - **Input:** A word string → embedding lookup (from a pretrained embedding matrix).
 - **Output:** A dense word vector (typically 100--300 dimensions). Derived scalar measures: semantic neighborhood density (SND = mean cosine to $k$ nearest neighbors), average radius of co-occurrence (ARC), cosine similarity between word pairs (for priming).
@@ -768,14 +768,14 @@ This family spans a wide range of complexity, from simple embedding lookups (Typ
 - **Key property:** One vector per word type, no context sensitivity. fastText uniquely allows vectors for nonwords via subword n-gram composition [@hendrix2021nonword].
 - **Gym interface:** `word_string → vector` (the embedding itself) plus `vector → {SND, ARC, ...}` (derived scalars). Users submit either pre-computed vectors or a model that generates them. The Gym computes standard derived measures. For priming datasets: `(prime_string, target_string) → cosine_similarity`.
 
-### Type 7: Word association / network models {#sec-type7}
+### Type 7: word association / network models {#sec-type7}
 
 - **Input:** A word string → association graph lookup (e.g., SWOW-EN).
 - **Output:** Associative strength to other words, spreading activation measures, graph-theoretic centrality.
 - **Papers:** @dedeyne2019swow; @jones2006beagle (BEAGLE captures associative structure).
 - **Gym interface:** `word_string → {assoc_strength, centrality, ...}`. Structurally similar to Type 6 but the underlying representation is a graph rather than a vector space.
 
-### Type 8: Tokenization-derived features {#sec-type8}
+### Type 8: tokenization-derived features {#sec-type8}
 
 - **Input:** A word string → tokenizer algorithm.
 - **Output:** Number of subword tokens, token boundary positions, token frequency, chunkability (normalized token count), alignment with morpheme boundaries.
@@ -783,7 +783,7 @@ This family spans a wide range of complexity, from simple embedding lookups (Typ
 - **Papers:** @beinborn2023tokenization.
 - **Gym interface:** `word_string × tokenizer → {n_tokens, token_boundaries, chunkability, ...}`. Users submit a tokenizer (or its vocabulary file) and the Gym runs it on the stimulus set. This is a lightweight interface that doesn't require a full LM.
 
-### Type 9: Compositional distributional models (morphology) {#sec-type9}
+### Type 9: compositional distributional models (morphology) {#sec-type9}
 
 - **Input:** A morphologically complex word → decomposed into stem + affix (or modifier + head) → composition function applied to component vectors.
 - **Output:** A composed vector for the derived/compound word; semantic transparency = cosine between composed vector and observed whole-word vector.
@@ -791,7 +791,7 @@ This family spans a wide range of complexity, from simple embedding lookups (Typ
 - **Papers:** @kim2019compound; @guenther2020german.
 - **Gym interface:** `(stem_vector, affix) → composed_vector; cosine(composed, observed) → transparency_score`. Requires the user to provide both the composition function and the base embedding space. Inherits from Type 6.
 
-### Type 10: Discrimination-based models {#sec-type10}
+### Type 10: discrimination-based models {#sec-type10}
 
 - **Input:** A word's orthographic form encoded as letter n-gram cues (or triphone cues for auditory) → linear mapping to semantic space.
 - **Output:** Discrimination-based measures: G2L prior (how strongly the cues predict this word), G2L activation diversity, L2L prior, L2L I-diversity, semantic support (correlation between predicted and target semantic vector), path certainty, uncertainty.
@@ -800,7 +800,7 @@ This family spans a wide range of complexity, from simple embedding lookups (Typ
 - **Key property:** These models derive frequency effects, morphological effects, and semantic effects as *emergent consequences* of error-driven learning, rather than treating them as separate predictors. They also naturally handle nonwords (which receive predicted semantic vectors that can be evaluated for plausibility).
 - **Gym interface:** `word_string → {G2L_prior, activation_diversity, semantic_support, ...}`. The user must specify the training corpus, the cue structure (e.g., letter trigrams), and the semantic target space (e.g., fastText vectors). This is a more complex interface because the model has internal parameters learned from a corpus, unlike the simple lookup of Types 0--4.
 
-### Type 11: Contextual language models (surprisal) {#sec-type11}
+### Type 11: contextual language models (surprisal) {#sec-type11}
 
 - **Input:** A word *in sentence context* → language model.
 - **Output:** Conditional probability $P(w|\text{context})$; surprisal $s(w) = -\log P(w|\text{context})$; contextual entropy $H(\text{context})$; contextual word embeddings (hidden states).
@@ -812,7 +812,7 @@ This family spans a wide range of complexity, from simple embedding lookups (Typ
 - **Scope note:** Contextual surprisal is largely *not applicable* to standard isolated-word LD paradigms, because there is no preceding sentence context. However, it becomes relevant for (a) auditory LD with cumulative phoneme-level surprisal [@balling2012surprisal], and (b) any future LD-in-context paradigms. The Gym should support this interface but flag that it applies to a restricted set of LD datasets.
 - **Gym interface:** `(context, word) → {surprisal, entropy, hidden_state}`. For isolated-word LD, context is null and only unigram surprisal (≈ log frequency) is defined.
 
-## Family D: Process and decision models {#sec-familyD}
+## Family D: process and decision models {#sec-familyD}
 
 Families A--C produce *predictor values*---numbers that correlate with RT and can be plugged into a regression. Family D is qualitatively different. A process model (also called a "cognitive model" or "computational model of the task") specifies the *mechanism* by which the cognitive system transforms perceptual input into a behavioral response. Rather than saying "words with higher frequency have shorter RTs," a process model says "perceptual evidence for this word accumulates at rate $v$ (determined by its frequency) in a noisy random walk toward a decision boundary at distance $a$, and the RT is the first-passage time of this process plus a nondecision component $T_{er}$."
 
@@ -820,7 +820,7 @@ The crucial property of process models is that they generate not a single predic
 
 For the Gym, supporting Family D models means accepting submissions that include: (1) a *linking function* mapping predictor values from Families A--C to process model parameters (e.g., log frequency → drift rate), and (2) a *decision architecture* (DDM, LBA, Bayesian Reader, etc.) that generates predicted RT distributions from those parameters. The evaluation pipeline must then compare predicted distributions to observed distributions, not just predicted means to observed means. This is more computationally intensive but provides a much more informative test of theory.
 
-### Type 12: Evidence accumulation / decision models {#sec-type12}
+### Type 12: evidence accumulation / decision models {#sec-type12}
 
 - **Input:** An evidence quality signal per word (e.g., drift rate derived from frequency, or activation level from an interactive activation network) + decision parameters (boundary, starting point, nondecision time).
 - **Output:** Predicted RT distribution (not just mean RT) and accuracy for both word and nonword responses.
@@ -839,11 +839,11 @@ For the Gym, supporting Family D models means accepting submissions that include
 - **Evaluation may use:** Quantile fits (.1--.9), Kolmogorov--Smirnov distance, or likelihood of observed data given the model's predictions.
 
 
-# Catalog of Human Dependent Variables {#sec-humandv}
+# Catalog of human dependent variables {#sec-humandv}
 
 This section enumerates every human DV encountered in the surveyed literature. These are the targets that submitted models must predict. For the Gym's purposes, we organize them by measurement type, aggregation level, and which datasets provide them.
 
-## Primary DVs: Lexical decision reaction time {#sec-primarydv}
+## Primary DVs: lexical decision reaction time {#sec-primarydv}
 
 The core DV across the entire literature. Several variants exist, and the Gym must support all of them because they are not interchangeable.
 
@@ -887,7 +887,7 @@ The core DV across the entire literature. Several variants exist, and the Gym mu
     - **Papers:** @ratcliff2004diffusion; @yap2012individual.
     - **Gym interface:** These are *derived* DVs (extracted from raw RTs via DDM fitting). The Gym could provide pre-extracted DDM parameters as an additional evaluation target, or accept submitted process models that predict them.
 
-## Primary DVs: Lexical decision accuracy {#sec-accuracy}
+## Primary DVs: lexical decision accuracy {#sec-accuracy}
 
 1. **Item-level accuracy.**
 
@@ -896,7 +896,7 @@ The core DV across the entire literature. Several variants exist, and the Gym mu
     - **Papers:** All megastudy papers report accuracy. @beinborn2023tokenization used accuracy as an evaluation target alongside RT.
     - **Gym interface:** The submitted model provides predicted accuracy per item; evaluation via correlation or a proper scoring rule (log-loss). Alternatively, the model predicts a probability of "yes" response, evaluated against observed accuracy.
 
-## Secondary DVs: Primed lexical decision {#sec-primeddv}
+## Secondary DVs: primed lexical decision {#sec-primeddv}
 
 1. **Primed LD RT.**
 
@@ -905,7 +905,7 @@ The core DV across the entire literature. Several variants exist, and the Gym mu
     - **Papers:** @mandera2017explaining; @auguste2017embeddings; @guenther2016lsa; @jones2006beagle.
     - **Gym interface:** The submitted model provides predicted priming magnitude for each prime--target pair; or predicted RT for each (prime, target, SOA) combination. Evaluation via correlation with observed priming effects.
 
-## Secondary DVs: Auditory lexical decision {#sec-auditorydv}
+## Secondary DVs: auditory lexical decision {#sec-auditorydv}
 
 1. **Auditory LD RT.**
 
@@ -914,7 +914,7 @@ The core DV across the entire literature. Several variants exist, and the Gym mu
     - **Papers:** @balling2012surprisal (cumulative phoneme surprisal); @chuang2021ldl (primed auditory LD).
     - **Gym interface:** Same structure as visual LD, but the predictor space may include phoneme-level temporal features (uniqueness point, cohort size, cumulative surprisal). Models may need to produce predictions at phoneme-level temporal resolution.
 
-## Secondary DVs: Naming / pronunciation {#sec-namingdv}
+## Secondary DVs: naming / pronunciation {#sec-namingdv}
 
 1. **Naming RT.**
 
@@ -922,7 +922,7 @@ The core DV across the entire literature. Several variants exist, and the Gym mu
     - **Datasets providing this:** ELP (naming subset, 444 participants), MEGALEX.
     - **Relevance:** Not a lexical *decision* DV per se, but naming data appear as comparison DVs in many of the surveyed papers (e.g., @balota1984frequency showed frequency effects are smaller in naming than LD). The Gym may want to include naming as a secondary evaluation target to test whether models that predict LD also predict naming, and vice versa.
 
-## Secondary DVs: Neural measures {#sec-neuraldv}
+## Secondary DVs: neural measures {#sec-neuraldv}
 
 These are recorded during word recognition tasks that overlap with LD paradigms (isolated word reading, single-word presentation).
 
@@ -932,7 +932,7 @@ These are recorded during word recognition tasks that overlap with LD paradigms 
     - **Papers:** @sassenhagen2020traces (encoding/decoding of fastText vectors during isolated word reading); @michaelov2024n400 (GPT-3 surprisal predicts N400).
     - **Gym interface:** The submitted model provides predicted ERP amplitude per item; evaluation via encoding model $R^2$ or correlation. This is a stretch target for the Gym---it would require ERP datasets aligned with the same stimuli.
 
-## Summary: DV × Dataset matrix for the Gym {#sec-dvmatrix}
+## Summary: DV × dataset matrix for the Gym {#sec-dvmatrix}
 
 | DV | Visual LD datasets | Auditory LD datasets | Priming datasets | Neural datasets |
 |:---|:---|:---|:---|:---|
