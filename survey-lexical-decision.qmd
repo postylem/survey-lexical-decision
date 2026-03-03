@@ -11,11 +11,6 @@ format:
     toc-depth: 2
     number-sections: true
     code-fold: true
-  pdf:
-    toc: true
-    number-sections: true
-    documentclass: article
-    geometry: margin=0.5in
 ---
 
 # Introduction {#sec-intro}
