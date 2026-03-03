@@ -1,0 +1,19 @@
+.collapsible-heading {
+  cursor: pointer;
+  user-select: none;
+}
+
+.collapsible-heading::after {
+  content: " ▾";
+  font-size: 0.6em;
+  opacity: 0.4;
+  vertical-align: middle;
+}
+
+.collapsible-heading.collapsed::after {
+  content: " ▸";
+}
+
+.collapsible-body.collapsed {
+  display: none;
+}
