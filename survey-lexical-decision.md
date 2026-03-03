@@ -2,6 +2,7 @@
 title: "Predicting lexical decision reaction times from LMs"
 subtitle: "Survey for Psycholinguistics Gym"
 author: Jacob Hoover Vigly
+abstract: "This document catalogs papers and datasets on lexical decision reaction times (LD-RTs). A central finding across this literature is that word frequency (or unigram surprisal) is generally the single most powerful predictor, typically accounting for 30--40% of variance, while modern distributional and neural models contribute to explaining additional variance through semantic neighborhood, morphological transparency, and tokenization-derived features."
 date: 2026-03-02
 bibliography: survey-lexical-decision.bib
 csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl
@@ -13,13 +14,9 @@ format:
     code-fold: true
 ---
 
-# Introduction {#sec-intro}
+::: {.callout-note collapse="true" title="Terminology and Abbreviations"}
 
-This document catalogs papers and datasets on lexical decision reaction times (LD-RTs). A central finding across this literature is that word frequency (or unigram surprisal) is generally the single most powerful predictor, typically accounting for 30--40% of variance, while modern distributional and neural models contribute to explaining additional variance through semantic neighborhood, morphological transparency, and tokenization-derived features.
-
-# Terminology and Abbreviations {#sec-terminology}
-
-## Datasets and resources {#sec-termdatasets}
+**Datasets and resources**
 
 - **ELP:** English Lexicon Project — the largest English megastudy of visual lexical decision and naming (~40K words; Balota et al., 2007).
 - **BLP:** British Lexicon Project — British English lexical decision megastudy (~29K words; Keuleers et al., 2012).
@@ -36,7 +33,7 @@ This document catalogs papers and datasets on lexical decision reaction times (L
 - **SWOW-EN:** Small World of Words — English word association norms (De Deyne et al., 2019).
 - **SCOPE:** South Carolina Psycholinguistic Metabase — aggregated psycholinguistic norms (Lewis et al., 2023).
 
-## Experimental and psycholinguistic terms {#sec-termexpt}
+**Experimental and psycholinguistic terms**
 
 - **LD / LDT:** Lexical decision (task) — participant sees a letter string and decides whether it is a real word ("yes") or a nonword ("no").
 - **RT:** Reaction time (milliseconds) — the time between stimulus onset and the participant's button press.
@@ -53,7 +50,7 @@ This document catalogs papers and datasets on lexical decision reaction times (L
 - **N (Coltheart's N):** Orthographic neighborhood size — the number of words that can be formed by substituting a single letter, preserving word length and letter position.
 - **PND:** Phonological neighborhood density — the auditory analogue of Coltheart's N: number of words differing by one phoneme.
 
-## Distributional and computational models {#sec-termmodels}
+**Distributional and computational models**
 
 - **LM:** Language model — any computational model that assigns probabilities to sequences of words (or that learns representations from text). Used broadly here to include simple frequency counts, embedding models, and modern neural models.
 - **LSA:** Latent Semantic Analysis — a count-based distributional model that applies singular value decomposition (SVD) to a term-document matrix.
@@ -65,7 +62,7 @@ This document catalogs papers and datasets on lexical decision reaction times (L
 - **WordPiece:** A subword tokenization algorithm used in BERT. Similar to BPE but selects merges by likelihood rather than frequency.
 - **UnigramLM:** A subword tokenization algorithm (Kudo, 2018) used in XLNet and T5. Selects a vocabulary that maximizes corpus likelihood under a unigram model.
 
-## Discrimination-based models {#sec-termdiscrim}
+**Discrimination-based models**
 
 - **NDL:** Naive Discriminative Learning — a model based on the equilibrium equations of the Rescorla--Wagner learning rule. Maps letter n-gram cues to word outcomes ("lexomes") to derive discrimination-based measures.
 - **LDL:** Linear Discriminative Learning — an extension of NDL that uses the Widrow--Hoff learning rule to learn linear mappings between form vectors and semantic vectors.
@@ -73,7 +70,7 @@ This document catalogs papers and datasets on lexical decision reaction times (L
 - **G2L:** Grapheme-to-Lexome — the mapping from orthographic input cues to lexical outcomes in NDL/LDL. "G2L prior" is the column 1-norm of this mapping, analogous to word frequency.
 - **L2L:** Lexome-to-Lexome — the mapping between lexical outcomes in NDL, capturing paradigmatic (associative) structure.
 
-## Process and decision models {#sec-termprocess}
+**Process and decision models**
 
 - **DDM:** Drift-diffusion model — an evidence accumulation model in which a noisy signal drifts from a starting point toward one of two decision boundaries. The key parameters are drift rate (quality of evidence), boundary separation (response caution), and nondecision time (encoding + motor time). Introduced by Ratcliff (1978).
 - **SPRT:** Sequential probability ratio test — the optimal procedure for choosing between two hypotheses by accumulating log-likelihood ratios until a threshold is reached. The Bayesian Reader implements an SPRT for word recognition.
@@ -83,12 +80,14 @@ This document catalogs papers and datasets on lexical decision reaction times (L
 - **DRC:** Dual Route Cascaded model — a computational model of visual word recognition with two processing routes: a lexical route (whole-word lookup) and a sublexical route (grapheme-to-phoneme conversion). Produces LD predictions via lexical-route activation (Coltheart et al., 2001).
 - **PDP:** Parallel Distributed Processing — the connectionist framework. In word recognition, refers specifically to the Seidenberg & McClelland (1989) "triangle model" with orthographic, phonological, and semantic layers.
 
-## Statistical and evaluation terms {#sec-termstats}
+**Statistical and evaluation terms**
 
 - **$R^2$:** Coefficient of determination — proportion of variance in the DV explained by the model.
 - **$\Delta R^2$ / ΔLL:** Change in $R^2$ (or change in log-likelihood) when adding a predictor to a baseline model. Also called "psychometric predictive power" (PPP) in some literatures.
 - **GAMM:** Generalized Additive Mixed Model — a regression framework that allows nonlinear predictor effects via smooth functions, plus random effects for participants and items.
 - **PAMM:** Piecewise Additive Mixed Model — a survival analysis framework used by Hendrix & Sun (2021) to model the hazard of response at each time point.
+
+:::
 
 # Major Lexical Decision Datasets {#sec-datasets}
 
