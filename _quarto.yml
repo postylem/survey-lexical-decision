@@ -27,7 +27,7 @@ format:
       light: cosmo
       dark: solar # choose: darkly cyborg slate solar superhero vapor
     # mainfont: CMU Concrete
-    # fontsize: 12pt
+    fontsize: 12pt
     # linestretch: 1.25
     citations-hover: true
     footnotes-hover: true
