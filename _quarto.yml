@@ -35,8 +35,8 @@ format:
     toc-title: "Contents"
     reference-location: margin
     default-image-extension: png
-    css: collapsible-sections.css
-    include-after-body: collapsible-sections.js
+    css: assets/collapsible-sections.css
+    include-after-body: assets/collapsible-sections.js
     include-before: |
       <div class="hidden">
       <p><span class="math display">
